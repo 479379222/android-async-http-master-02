@@ -1,5 +1,6 @@
 package com.example.myas.myasyntest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,7 +19,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnHttpTest;
+    private Button btnHttpTest,btnLstTest;
     private TextView txtResponse;
 
     @Override
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnHttpTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AsyncHttpClient client=new AsyncHttpClient();
+                AsyncHttpClient client = new AsyncHttpClient();
                 /*client.get("https://www.baidu.com", new AsyncHttpResponseHandler() {
 
                     @Override
@@ -81,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+        btnLstTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,MyListActivity.class));
+            }
+        });
     }
 
     private RequestParams getParames(){
@@ -93,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView(){
         btnHttpTest=(Button)findViewById(R.id.btnHttpTest);
+        btnLstTest=(Button)findViewById(R.id.lstTest);
         txtResponse=(TextView)findViewById(R.id.txtResponse);
     }
 

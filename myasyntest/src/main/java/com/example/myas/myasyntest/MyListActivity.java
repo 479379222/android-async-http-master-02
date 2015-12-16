@@ -1,16 +1,19 @@
 package com.example.myas.myasyntest;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyListActivity extends ListActivity {
+public class MyListActivity extends AppCompatActivity {
 
     private ListView lstView;
 
@@ -20,26 +23,40 @@ public class MyListActivity extends ListActivity {
         setContentView(R.layout.activity_my_list);
 
         initView();
-        lstView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getListData()));
-        setContentView(lstView);
+        lstView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getTitlesList()));
+        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(MyListActivity.this, sampleConfig[position].targetClass));
+            }
+        });
 
-    }
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
     }
 
     private void initView() {
         lstView = (ListView) findViewById(R.id.lstView);
     }
 
-    private List<String> getListData(){
-        List<String> listdata=new ArrayList<>();
-        listdata.add("北京");
-        listdata.add("上海");
-        listdata.add("天津");
-        return listdata;
+    private static final SampleConfig[] sampleConfig = new SampleConfig[]{
+            new SampleConfig(R.string.arraylist, ArraylistActivity.class)
+    };
+
+    private List<String> getTitlesList() {
+        List<String> titlel = new ArrayList<>();
+        for (SampleConfig config : sampleConfig) {
+            titlel.add(getString(config.titleID));
+        }
+        return titlel;
+    }
+
+    private static class SampleConfig {
+        int titleID;
+        Class targetClass;
+
+        SampleConfig(int titleID, Class targetClass) {
+            this.titleID = titleID;
+            this.targetClass = targetClass;
+        }
     }
 
 }
