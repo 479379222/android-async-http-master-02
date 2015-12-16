@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="arraylist">ArrayList</string>
+    <string name="simplelist">SimpleList</string>
+    <string name="simplecursor">Simplecursor</string>
+    <string name="readcontact">Readcontact</string>
 </resources>

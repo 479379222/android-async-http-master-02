@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myas.myasyntest">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +24,9 @@
         </activity>
         <activity android:name=".MyListActivity" />
         <activity android:name=".ArraylistActivity" />
-        <activity android:name=".SimplelistActivity"></activity>
+        <activity android:name=".SimplelistActivity" />
+        <activity android:name=".SimplecursorActivity" />
+        <activity android:name=".ReadcontactActivity"></activity>
     </application>
 
 </manifest>

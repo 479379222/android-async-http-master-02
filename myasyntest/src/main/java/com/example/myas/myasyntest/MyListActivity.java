@@ -38,7 +38,10 @@ public class MyListActivity extends AppCompatActivity {
     }
 
     private static final SampleConfig[] sampleConfig = new SampleConfig[]{
-            new SampleConfig(R.string.arraylist, ArraylistActivity.class)
+            new SampleConfig(R.string.arraylist, ArraylistActivity.class),
+            new SampleConfig(R.string.simplelist,SimplelistActivity.class),
+            new SampleConfig(R.string.simplecursor,SimplecursorActivity.class),
+            new SampleConfig(R.string.readcontact,ReadcontactActivity.class)
     };
 
     private List<String> getTitlesList() {
