@@ -26,6 +26,7 @@ public class ReadcontactActivity extends AppCompatActivity {
      * 电话号码
      **/
     private static final int PHONES_NUMBER_INDEX = 1;
+    private static final int PHONES_NUMBER_INDEX_test = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,7 @@ public class ReadcontactActivity extends AppCompatActivity {
             map.put("phone", phonenumber);
             map.put("names", contactname);
             list.add(map);
+
         }
 
         return list;
