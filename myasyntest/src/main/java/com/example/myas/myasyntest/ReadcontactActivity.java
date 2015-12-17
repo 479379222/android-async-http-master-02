@@ -27,6 +27,7 @@ public class ReadcontactActivity extends AppCompatActivity {
      **/
     private static final int PHONES_NUMBER_INDEX = 1;
     private static final int PHONES_NUMBER_INDEX_test = 1;
+    private static final String MyName="wangbf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
