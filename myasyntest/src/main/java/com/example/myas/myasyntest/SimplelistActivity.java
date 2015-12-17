@@ -31,6 +31,7 @@ public class SimplelistActivity extends AppCompatActivity {
                 new int[]{R.id.imgLogo, R.id.txtTitle, R.id.txtSubtitle});
         lstView.setAdapter(adapter);
 
+
     }
 
     private void initView() {
