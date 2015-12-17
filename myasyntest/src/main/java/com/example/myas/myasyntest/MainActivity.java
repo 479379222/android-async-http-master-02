@@ -19,7 +19,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnHttpTest,btnLstTest;
+    private Button btnHttpTest,btnLstTest,btnService;
     private TextView txtResponse;
 
     @Override
@@ -86,7 +86,14 @@ public class MainActivity extends AppCompatActivity {
         btnLstTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,MyListActivity.class));
+                startActivity(new Intent(MainActivity.this, MyListActivity.class));
+            }
+        });
+
+        btnService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MyserviceActivity.class));
             }
         });
     }
@@ -101,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView(){
         btnHttpTest=(Button)findViewById(R.id.btnHttpTest);
-        btnLstTest=(Button)findViewById(R.id.lstTest);
+        btnLstTest=(Button)findViewById(R.id.btnTest);
+        btnService=(Button)findViewById(R.id.btnService);
         txtResponse=(TextView)findViewById(R.id.txtResponse);
     }
 

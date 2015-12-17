@@ -17,11 +17,18 @@
         android:text="HttpTest" />
 
     <Button
-        android:id="@+id/lstTest"
+        android:id="@+id/btnTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="List Test" />
+
+    <Button
+        android:id="@+id/btnService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Service Test" />
 
     <TextView
         android:id="@+id/txtResponse"
