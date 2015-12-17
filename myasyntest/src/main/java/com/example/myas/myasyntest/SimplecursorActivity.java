@@ -9,6 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,15 +28,15 @@ public class SimplecursorActivity extends AppCompatActivity {
 
         Cursor cursor = getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-        if(cursor != null){
+        if (cursor != null) {
 
             startManagingCursor(cursor);
 
         }
         ListAdapter adapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_1, cursor,
-                new String[] { ContactsContract.PhoneLookup.DISPLAY_NAME },
-                new int[] { android.R.id.text1 });
+                new String[]{ContactsContract.PhoneLookup.DISPLAY_NAME},
+                new int[]{android.R.id.text1});
         lstview.setAdapter(adapter);
         cursor.close();
 

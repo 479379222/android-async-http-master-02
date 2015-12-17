@@ -27,7 +27,8 @@
         <activity android:name=".SimplelistActivity" />
         <activity android:name=".SimplecursorActivity" />
         <activity android:name=".ReadcontactActivity" />
-        <activity android:name=".MyserviceActivity"></activity>
+        <activity android:name=".MyserviceActivity" />
+        <activity android:name=".BaseserviceActivity"></activity>
     </application>
 
 </manifest>
