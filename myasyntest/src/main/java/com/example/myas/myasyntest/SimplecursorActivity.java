@@ -9,7 +9,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SimplecursorActivity extends AppCompatActivity {
 
@@ -21,15 +23,21 @@ public class SimplecursorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simplecursor);
 
         initView();
-        Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-        startManagingCursor(cursor);
+        Map<String, String> map = new HashMap<String, String>();
 
-        ListAdapter listAdapter = new SimpleCursorAdapter(this, android.R.layout.simple_expandable_list_item_1,
-                cursor,
-                new String[]{Contacts.People.NAME},
-                new int[]{android.R.id.text1});
+        Cursor cursor = getContentResolver().query(
+                ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+        if(cursor != null){
 
-        lstview.setAdapter(listAdapter);
+            startManagingCursor(cursor);
+
+        }
+        ListAdapter adapter = new SimpleCursorAdapter(this,
+                android.R.layout.simple_list_item_1, cursor,
+                new String[] { ContactsContract.PhoneLookup.DISPLAY_NAME },
+                new int[] { android.R.id.text1 });
+        lstview.setAdapter(adapter);
+        cursor.close();
 
     }
 

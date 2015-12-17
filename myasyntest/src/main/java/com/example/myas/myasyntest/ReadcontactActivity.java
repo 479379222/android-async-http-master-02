@@ -60,7 +60,7 @@ public class ReadcontactActivity extends AppCompatActivity {
             //得到手机号码 wangbf
             String contactId = cursor.getString(contactIdIndex);
             String phonenumber="";
-            if (TextUtils.isEmpty(phonenumber))
+            if (TextUtils.isEmpty(contactId))
                 continue;
             //得到联系人姓名
             String contactname = cursor.getString(nameIndex);
