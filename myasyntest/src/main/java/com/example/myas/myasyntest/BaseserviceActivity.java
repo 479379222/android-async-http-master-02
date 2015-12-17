@@ -13,6 +13,8 @@ public class BaseserviceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_baseservice);
         initView();
 
+
+
     }
 
     private void initView(){
