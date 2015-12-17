@@ -57,7 +57,7 @@ public class ReadcontactActivity extends AppCompatActivity {
             nameIndex = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
         }
         while (cursor.moveToNext()) {
-            //得到手机号码
+            //得到手机号码 wangbf
             String contactId = cursor.getString(contactIdIndex);
             String phonenumber="";
             //if (TextUtils.isEmpty(phonenumber))
