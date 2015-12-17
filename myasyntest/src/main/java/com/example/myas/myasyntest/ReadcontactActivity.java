@@ -60,8 +60,8 @@ public class ReadcontactActivity extends AppCompatActivity {
             //得到手机号码 wangbf
             String contactId = cursor.getString(contactIdIndex);
             String phonenumber="";
-            //if (TextUtils.isEmpty(phonenumber))
-            //    continue;
+            if (TextUtils.isEmpty(phonenumber))
+                continue;
             //得到联系人姓名
             String contactname = cursor.getString(nameIndex);
             Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
