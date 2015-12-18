@@ -37,18 +37,18 @@ public class BaseserviceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_baseservice);
         initView();
         PageParams = new String[2];
-        PageParams[0] = "";
-        PageParams[1] = "";
-        if(CommonUtils.isNetworkAvailable(this))
+        PageParams[0] = "0000000003";
+        PageParams[1] = "000007";
+        if (CommonUtils.isNetworkAvailable(this))
             new getCourseTask().execute(PageParams);
     }
 
-    private void initView(){
-        context=BaseserviceActivity.this;
-        lstView=(ListView)findViewById(R.id.lstView);
+    private void initView() {
+        context = BaseserviceActivity.this;
+        lstView = (ListView) findViewById(R.id.lstView);
     }
 
-    private class getCourseTask extends AsyncTask<String,Void,List<Map<String,Object>>>{
+    private class getCourseTask extends AsyncTask<String, Void, List<Map<String, Object>>> {
 
         @Override
         protected void onPreExecute() {
@@ -106,6 +106,7 @@ public class BaseserviceActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                String a="";
                 return list;
             } else {
                 return null;
@@ -113,26 +114,13 @@ public class BaseserviceActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(List<Map<String, Object>> maps) {
-            super.onPostExecute(maps);
+        protected void onPostExecute(List<Map<String, Object>> result) {
+            super.onPostExecute(result);
+            listitems = result;
             adapter = new SimpleAdapter(context, listitems,
-                    R.layout.listitem_course, new String[] { "CourseName",
-                    "SNames", "CourseDate","CourseCount","Score" }, new int[] {
-                    R.id.txtCourseName, R.id.txtSNames,
-                    R.id.txtCourseDate,R.id.txtCourseCount,R.id.txtScore});
+                    R.layout.listitem_course, new String[]{"CourseName", "SNames", "CourseDate", "CourseCount", "Score"},
+                    new int[]{R.id.txtCourseName, R.id.txtSNames,R.id.txtCourseDate, R.id.txtCourseCount, R.id.txtScore});
 
-            adapter.setViewBinder(new SimpleAdapter.ViewBinder() {
-
-                public boolean setViewValue(View view, Object data,
-                                            String textRepresentation) {
-                    if (view instanceof ImageView && data instanceof Bitmap) {
-                        ImageView iv = (ImageView) view;
-                        iv.setImageBitmap((Bitmap) data);
-                        return true;
-                    } else
-                        return false;
-                }
-            });
             lstView.setAdapter(adapter);
         }
     }
