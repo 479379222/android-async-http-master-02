@@ -30,6 +30,7 @@ public class BaseserviceActivity extends AppCompatActivity {
     private SimpleAdapter adapter = null;
     private List<Map<String, Object>> listitems = null;
     private String[] PageParams;
+    private String test="wangbf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
