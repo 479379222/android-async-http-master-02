@@ -1,5 +1,6 @@
 package com.example.myas.myasyntest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myas.myasyntest.http.HttpGetActivity;
 import com.loopj.android.http.*;
 
 import cz.msebera.android.httpclient.Header;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnHttpTest,btnLstTest,btnService;
     private TextView txtResponse;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,44 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btnHttpTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AsyncHttpClient client = new AsyncHttpClient();
-                /*client.get("https://www.baidu.com", new AsyncHttpResponseHandler() {
-
-                    @Override
-                    public void onStart() {
-                        super.onStart();
-                        Toast.makeText(MainActivity.this,"OnStart",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                        Toast.makeText(MainActivity.this,"OnSuccess",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        Toast.makeText(MainActivity.this,"OnFailure",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onRetry(int retryNo) {
-                        super.onRetry(retryNo);
-                        Toast.makeText(MainActivity.this,"OnRetry",Toast.LENGTH_SHORT).show();
-                    }
-                });*/
-
-                client.get("https://www.baidu.com", getParames(), new TextHttpResponseHandler() {
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                        //Toast.makeText(MainActivity.this,responseString,Toast.LENGTH_SHORT).show();
-                        txtResponse.setText(responseString);
-                    }
-                });
+                startActivity(new Intent(context, HttpGetActivity.class));
             }
         });
 
@@ -107,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView(){
+        context=MainActivity.this;
         btnHttpTest=(Button)findViewById(R.id.btnHttpTest);
         btnLstTest=(Button)findViewById(R.id.btnTest);
         btnService=(Button)findViewById(R.id.btnService);
