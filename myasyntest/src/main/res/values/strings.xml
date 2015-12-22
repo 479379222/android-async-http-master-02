@@ -6,4 +6,8 @@
     <string name="simplelist">SimpleList</string>
     <string name="simplecursor">Simplecursor</string>
     <string name="readcontact">Readcontact</string>
+
+    <string name="httpget">Http Get</string>
+    <string name="httppost">Http Post</string>
+
 </resources>

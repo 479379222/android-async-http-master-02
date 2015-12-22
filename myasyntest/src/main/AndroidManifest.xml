@@ -31,7 +31,9 @@
         <activity android:name=".ReadcontactActivity" />
         <activity android:name=".MyserviceActivity" />
         <activity android:name=".BaseserviceActivity" />
-        <activity android:name=".http.HttpGetActivity"></activity>
+        <activity android:name=".http.HttpGetActivity" />
+        <activity android:name=".http.HttpmainActivity" />
+        <activity android:name=".http.HttppostActivity"></activity>
     </application>
 
 </manifest>

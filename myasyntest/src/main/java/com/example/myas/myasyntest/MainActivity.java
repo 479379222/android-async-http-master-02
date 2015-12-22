@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myas.myasyntest.http.HttpGetActivity;
+import com.example.myas.myasyntest.http.HttpmainActivity;
 import com.loopj.android.http.*;
 
 import cz.msebera.android.httpclient.Header;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnHttpTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, HttpGetActivity.class));
+                startActivity(new Intent(context, HttpmainActivity.class));
             }
         });
 

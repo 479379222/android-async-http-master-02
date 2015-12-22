@@ -34,15 +34,16 @@ public class HttpGetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("https://www.baidu.com", getParames(), new TextHttpResponseHandler() {
+
+                client.get("https://www.baidu.com", getParames(), new AsyncHttpResponseHandler() {
                     @Override
-                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        txtView.setText(new String(responseBody));
                     }
 
                     @Override
-                    public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                        txtView.setText(responseString);
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
                     }
                 });
             }
