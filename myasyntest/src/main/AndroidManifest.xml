@@ -33,7 +33,9 @@
         <activity android:name=".BaseserviceActivity" />
         <activity android:name=".http.HttpGetActivity" />
         <activity android:name=".http.HttpmainActivity" />
-        <activity android:name=".http.HttppostActivity"></activity>
+        <activity android:name=".http.HttppostActivity" />
+        <activity android:name=".http.UploadingActivity" />
+        <activity android:name=".http.JsonActivity"></activity>
     </application>
 
 </manifest>

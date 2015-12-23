@@ -9,5 +9,7 @@
 
     <string name="httpget">Http Get</string>
     <string name="httppost">Http Post</string>
+    <string name="httpupload">Uploading</string>
+    <string name="httpjson">Json Data</string>
 
 </resources>

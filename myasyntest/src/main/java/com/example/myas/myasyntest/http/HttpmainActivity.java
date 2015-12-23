@@ -40,7 +40,9 @@ public class HttpmainActivity extends AppCompatActivity {
 
     private static final SampleConfig[] sampleConfig = new SampleConfig[]{
             new SampleConfig(R.string.httpget, HttpGetActivity.class),
-            new SampleConfig(R.string.httppost,HttppostActivity.class)
+            new SampleConfig(R.string.httppost,HttppostActivity.class),
+            new SampleConfig(R.string.httpupload,UploadingActivity.class),
+            new SampleConfig(R.string.httpjson,JsonActivity.class)
     };
 
     private List<String> getTitlesList() {
