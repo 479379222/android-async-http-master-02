@@ -35,7 +35,10 @@
         <activity android:name=".http.HttpmainActivity" />
         <activity android:name=".http.HttppostActivity" />
         <activity android:name=".http.UploadingActivity" />
-        <activity android:name=".http.JsonActivity"></activity>
+        <activity android:name=".http.JsonActivity" />
+        <activity android:name=".http.DownloadActivity" />
+        <activity android:name=".http.DeleteActivity" />
+        <activity android:name=".http.CookieActivity"></activity>
     </application>
 
 </manifest>

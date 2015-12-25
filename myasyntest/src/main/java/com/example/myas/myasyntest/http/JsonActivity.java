@@ -36,7 +36,7 @@ public class JsonActivity extends AppCompatActivity {
         AsyncHttpClient client = new AsyncHttpClient();
 
         JSONArray jsonArray=new JSONArray();
-        client.get("http://10.0.2.2/MCMSysWeb/json.txt", new RequestParams("", ""), new JsonHttpResponseHandler() {
+        client.get("http://10.0.2.2/MCMSysWeb/json.txt", new RequestParams("name", ""), new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 super.onSuccess(statusCode, headers, response);
@@ -52,7 +52,7 @@ public class JsonActivity extends AppCompatActivity {
                         }
                     }
 
-                    ArrayAdapter adapter=new ArrayAdapter(context,android.R.layout.simple_list_item_1,objects);
+                    ArrayAdapter<String> adapter=new ArrayAdapter(context,android.R.layout.simple_list_item_1,objects);
                     lstView.setAdapter(adapter);
 
                 }

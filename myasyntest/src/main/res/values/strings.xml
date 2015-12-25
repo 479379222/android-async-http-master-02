@@ -11,5 +11,8 @@
     <string name="httppost">Http Post</string>
     <string name="httpupload">Uploading</string>
     <string name="httpjson">Json Data</string>
+    <string name="download">Download</string>
+    <string name="httpdelete">http delete</string>
+    <string name="httpcookie">Http Cookie</string>
 
 </resources>
